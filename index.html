@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundilujos - Enlaces</title>
     <style>
+        /* Carga de la fuente oficial de Mundilujos */
+        @font-face {
+            font-family: 'Pervitina';
+            src: url('pervitina.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -30,32 +38,74 @@
             width: 90%;
             max-width: 400px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
         
+        /* Contenedor con borde metálico/dorado para aspecto lujoso */
         .glass-container {
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(10px);
             border-radius: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.6), inset 0 0 15px rgba(255, 215, 0, 0.1);
             padding: 25px 20px;
             width: 90%;
             max-width: 400px;
-            margin-top: 20px;
+            margin-top: 15px;
             box-sizing: border-box;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Sello de confianza premium usando la fuente oficial */
+        .trust-badge {
+            font-family: 'Pervitina', sans-serif;
+            color: #ffd700;
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* Indicador en vivo de tecnología */
+        .live-status {
+            font-size: 12px;
+            color: #4caf50;
+            text-align: center;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: bold;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #4caf50;
+            border-radius: 50%;
+            animation: pulse-dot 1.5s infinite;
+        }
+        @keyframes pulse-dot {
+            0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+            70% { box-shadow: 0 0 0 6px rgba(76, 175, 80, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
         }
         
+        /* Títulos con la fuente oficial */
         .section-title {
-            font-size: 14px;
+            font-family: 'Pervitina', sans-serif;
+            font-size: 15px;
             color: #f5f5f5;
             text-align: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             margin-top: 25px;
-            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            letter-spacing: 0.5px;
         }
         .section-title:first-child {
             margin-top: 0;
         }
+
         .link-btn {
             display: block;
             width: 100%;
@@ -67,29 +117,41 @@
             font-weight: bold;
             border-radius: 8px;
             box-sizing: border-box;
-            transition: transform 0.2s, opacity 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
         }
+        
+        /* Efecto destello de luz (Shimmer) para el botón Mayorista */
         .btn-mayorista {
             background-color: #0d47a1; 
             border: 1px solid #1976D2;
         }
+        .btn-mayorista::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            animation: shimmer 3.5s infinite;
+        }
+        @keyframes shimmer {
+            0% { left: -100%; }
+            20% { left: 200%; }
+            100% { left: 200%; }
+        }
+
         .btn-detal {
             background-color: #e53935;
             border: 1px solid #ff5252;
         }
         .link-btn:hover {
             transform: scale(1.02);
-            opacity: 0.9;
-        }
-        
-        .pulse-button {
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(25, 118, 210, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 15px 10px rgba(25, 118, 210, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(25, 118, 210, 0); }
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         .map-container {
@@ -97,7 +159,8 @@
             border-radius: 8px;
             overflow: hidden;
             margin-top: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
         .map-container iframe {
             width: 100%;
@@ -132,13 +195,22 @@
     </div>
 
     <div class="glass-container">
-        <!-- Sección Mayoristas con enlace real -->
+        <!-- Sello de exclusividad -->
+        <div class="trust-badge">★ IMPORTADORES DIRECTOS Y MARCA PROPIA ★</div>
+
+        <!-- Sección Mayoristas -->
         <div class="section-title">¿Tienes un negocio y te interesa comprar al por mayor?</div>
-        <a href="https://wa.me/573144566196?text=Hola,%20quiero%20información%20para%20compras%20al%20por%20mayor" class="link-btn btn-mayorista pulse-button">
+        
+        <!-- Indicador de línea activa -->
+        <div class="live-status">
+            <span class="dot"></span> Líneas de atención activas - Respuesta inmediata
+        </div>
+        
+        <a href="https://wa.me/573144566196?text=Hola,%20quiero%20información%20para%20compras%20al%20por%20mayor" class="link-btn btn-mayorista">
             LÍNEA NACIONAL - MAYORISTA
         </a>
 
-        <!-- Sección Detal con enlace real -->
+        <!-- Sección Detal -->
         <div class="section-title">Somos importadores, ¿buscas algo para tu moto al mejor precio?</div>
         <a href="https://wa.me/573126792200?text=Hola,%20busco%20accesorios%20al%20detal%20para%20mi%20moto" class="link-btn btn-detal">
             LÍNEA NACIONAL - DETAL
@@ -151,17 +223,14 @@
         </div>
     </div>
 
-    <!-- Sección Redes Sociales con enlaces reales -->
+    <!-- Sección Redes Sociales -->
     <div class="social-container">
-        <!-- Facebook -->
         <a href="https://www.facebook.com/iautomotrices?locale=es_LA" target="_blank">
             <svg class="social-icon icon-fb" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
         </a>
-        <!-- Instagram -->
         <a href="https://www.instagram.com/mundilujossas/" target="_blank">
             <svg class="social-icon icon-ig" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85c.15-3.23 1.66-4.77 4.92-4.92 1.27-.06 1.64-.07 4.85-.07m0-2.16C8.74 0 8.33.01 7.05.07 2.73.27.27 2.73.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.32 2.66 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.32-.2 6.78-2.66 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.32-2.66-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm5.22-10.53a1.44 1.44 0 1 0 1.44-1.44 1.44 1.44 0 0 0-1.44 1.44z"/></svg>
         </a>
-        <!-- TikTok -->
         <a href="https://www.tiktok.com/@mundilujossas" target="_blank">
             <svg class="social-icon icon-tk" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 15.66a6.33 6.33 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
         </a>
