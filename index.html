@@ -41,7 +41,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
         
-        /* Contenedor con borde metálico/dorado para aspecto lujoso */
         .glass-container {
             background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(10px);
@@ -55,18 +54,17 @@
             box-sizing: border-box;
         }
 
-        /* Sello de confianza premium usando la fuente oficial */
+        /* Sello de confianza premium - Color actualizado a Rojo */
         .trust-badge {
             font-family: 'Pervitina', sans-serif;
-            color: #ffd700;
+            color: #e53935; /* Rojo corporativo */
             text-align: center;
             font-size: 14px;
             letter-spacing: 1px;
             margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
         }
 
-        /* Indicador en vivo de tecnología */
         .live-status {
             font-size: 12px;
             color: #4caf50;
@@ -91,7 +89,7 @@
             100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
         }
         
-        /* Títulos con la fuente oficial */
+        /* Títulos con la fuente oficial (Excluyendo números/símbolos) */
         .section-title {
             font-family: 'Pervitina', sans-serif;
             font-size: 15px;
@@ -104,6 +102,13 @@
         }
         .section-title:first-child {
             margin-top: 0;
+        }
+        
+        /* Nueva clase para evitar que la fuente Pervitina dañe los números y símbolos */
+        .safe-font {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+            font-weight: bold;
+            font-size: 14px; /* Un poco más pequeño para compensar */
         }
 
         .link-btn {
@@ -123,7 +128,6 @@
             overflow: hidden;
         }
         
-        /* Efecto destello de luz (Shimmer) para el botón Mayorista */
         .btn-mayorista {
             background-color: #0d47a1; 
             border: 1px solid #1976D2;
@@ -195,13 +199,12 @@
     </div>
 
     <div class="glass-container">
-        <!-- Sello de exclusividad -->
+        <!-- Sello de exclusividad con color rojo corporativo -->
         <div class="trust-badge">★ IMPORTADORES DIRECTOS Y MARCA PROPIA ★</div>
 
         <!-- Sección Mayoristas -->
         <div class="section-title">¿Tienes un negocio y te interesa comprar al por mayor?</div>
         
-        <!-- Indicador de línea activa -->
         <div class="live-status">
             <span class="dot"></span> Líneas de atención activas - Respuesta inmediata
         </div>
@@ -216,8 +219,8 @@
             LÍNEA NACIONAL - DETAL
         </a>
 
-        <!-- Sección Mapa Interactivo -->
-        <div class="section-title">Encuéntranos en Calle 16 # 15 - 50 CC Moto Plaza Local 114</div>
+        <!-- Sección Mapa Interactivo (Con fuente segura para números y símbolos) -->
+        <div class="section-title safe-font">Encuéntranos en Calle 16 # 15 - 50 CC Moto Plaza Local 114</div>
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9275632237363!2d-74.08169472404518!3d4.60699014246081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2ab7785a8aba0b3b%3A0x3c84c6cfae3cfb69!2sMUNDILUJOS%20IMPORTADORA!5e0!3m2!1ses!2sco!4v1792792958816!5m2!1ses!2sco" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
