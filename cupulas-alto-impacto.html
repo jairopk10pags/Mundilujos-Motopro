@@ -528,11 +528,13 @@
       - Etiqueta GA4 Event con Event Name {{Event}} y disparador Custom Event
         con expresión regular ^(begin_checkout|purchase)$.
         Activar Send Ecommerce data, Data Source = Data Layer.
-      - Etiqueta GA4 Event generate_lead con disparador Custom Event generate_lead.
-        Parámetros lead_type, contact_method e item_name desde variables Data Layer
-        del mismo nombre. Registrar lead_type como dimensión personalizada en GA4.
+      - Agregar el activador de Evento personalizado generate_lead a las etiquetas
+        existentes GA4 - Evento Mayorista (click_mayorista) y
+        Meta Evento - Mayorista (trackCustom Contacto_Mayorista).
+        Ambas conservan además el activador Clic Botón Mayorista del inicio.
       - Conectar ambas etiquetas a la etiqueta de Google / ID G- de tu propiedad.
-      Meta se envía directamente a 1649000286802081 desde este archivo.
+      InitiateCheckout y Purchase se envían directamente al píxel 1649000286802081.
+      El contacto mayorista se envía a Meta desde su etiqueta existente de GTM.
       Configura las etiquetas de Meta en GTM para excluir estos eventos en esta página
       si actualmente los envían, para que cada acción se cuente una sola vez.
       purchase/Purchase representan el envío del formulario hacia WhatsApp,
@@ -701,14 +703,6 @@
         item_name: producto.nombre,
         item_variant: seleccion.acabado + ' / ' + seleccion.color
       });
-      if (typeof window.fbq === 'function') {
-        window.fbq('trackSingle', pixelId, 'Contact', {
-          lead_type: 'mayorista',
-          contact_method: 'whatsapp',
-          content_name: producto.nombre,
-          item_variant: seleccion.acabado + ' / ' + seleccion.color
-        });
-      }
     }
     id('mayorista').addEventListener('click', registrarMayorista);
     document.querySelector('[data-phone="whatsappMayorista"]').addEventListener('click', registrarMayorista);
