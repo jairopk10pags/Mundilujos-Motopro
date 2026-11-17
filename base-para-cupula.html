@@ -86,6 +86,7 @@
     }
   ],
   "preguntas": [
+    {"pregunta":"¿Puedo pagar el producto contraentrega?","respuesta":"No. Trabajamos con pago anticipado por transferencia bancaria, Bre-B o QR de Bancolombia. Te compartimos los datos por WhatsApp, después de confirmar la disponibilidad y el valor del pedido. Envíanos el comprobante: verificamos el ingreso antes de facturar y despachar."},
     {
       "pregunta": "¿Para qué tipo de manubrio sirve?",
       "respuesta": "La base universal permite instalar la cúpula en cualquier tipo de manubrio y ajustar su posición."
@@ -100,7 +101,7 @@
     },
     {
       "pregunta": "¿Cuánto cuesta el envío?",
-      "respuesta": "El envío se cotiza por separado según tu ciudad o municipio al coordinar el despacho."
+      "respuesta": "El flete se cotiza por separado según tu ciudad o municipio y lo pagas al recibir. El producto se paga por anticipado; no manejamos contraentrega del producto."
     }
   ],
   "whatsappDetal": "573126792200",
@@ -270,6 +271,35 @@
       .recommendation { padding-block: 29px 36px; }
       .recommendation-layout { grid-template-columns: 1fr; }
     }
+    .actions #mayorista { justify-self: start; width: fit-content; max-width: 100%; min-height: 44px; padding: 9px 13px; gap: 18px; font-size: .82rem; }
+    .form-payment-note { margin: 0; font-size: .83rem; color: var(--muted); }
+    form .payment-consent { display: flex; gap: 11px; align-items: flex-start; padding: 12px; background: #f2f7fa; font-size: .81rem; font-weight: 600; cursor: pointer; }
+    form .payment-consent input { width: 20px; height: 20px; min-height: 20px; margin: 2px 0 0; padding: 0; flex: none; accent-color: var(--rojo-boton); }
+    .buy-process { border-top: 1px solid var(--linea); padding-block: 42px 48px; }
+    .process-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .process-heading h2 { margin-bottom: 15px; }
+    .process-badge { flex: none; padding: 10px 15px; background: #ce0000; color: white; font-size: .8rem; font-weight: 800; line-height: 1.45; }
+    .process-intro { color: var(--muted); max-width: 70ch; margin-bottom: 26px; }
+    .process-steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+    .process-steps li { position: relative; padding: 20px 16px; background: #fff; border-top: 4px solid #0075b8; }
+    .process-steps li:nth-child(odd) { border-color: var(--rojo-boton); }
+    .step-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 23px; }
+    .step-number { font-size: 1.6rem; font-weight: 900; letter-spacing: -.05em; color: #a90000; }
+    .process-steps li:nth-child(even) .step-number { color: #006ca8; }
+    .step-top svg { width: 30px; height: 30px; color: #006ca8; }
+    .process-steps h3 { margin: 0 0 10px; font-size: 1rem; line-height: 1.25; }
+    .process-steps p { margin: 0; font-size: .83rem; color: var(--muted); }
+    .process-shipping { margin: 18px 0 0; padding: 14px 16px; background: #e8f5fd; font-size: .84rem; }
+    @media (max-width: 1000px) { .process-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .process-steps li:last-child { grid-column: 1 / -1; } }
+    @media (max-width: 680px) {
+      .buy-process { padding-block: 30px 36px; }
+      .process-heading { align-items: flex-start; flex-direction: column; gap: 0; }
+      .process-badge { margin-bottom: 15px; }
+      .process-steps { grid-template-columns: 1fr; gap: 10px; }
+      .process-steps li { display: grid; grid-template-columns: 64px minmax(0, 1fr); column-gap: 16px; padding: 17px; }
+      .step-top { grid-row: 1 / 3; flex-direction: column; justify-content: flex-start; gap: 8px; margin: 0; }
+      .process-steps h3 { margin-bottom: 6px; }
+    }
   </style>
 </head>
 <body>
@@ -312,7 +342,7 @@
             <button type="button" class="button primary" data-buy>Comprar al detal <span class="arrow" aria-hidden="true">→</span></button>
             <a class="button secondary" id="mayorista" target="_blank" rel="noopener noreferrer">Compras al por mayor <span class="arrow" aria-hidden="true">↗</span></a>
           </div>
-          <p class="purchase-note">Coordina tu pedido y el envío por WhatsApp.</p>
+          <p class="purchase-note">El producto se paga por anticipado. El flete se paga al recibir.</p>
         </div>
       </div>
     </section>
@@ -352,6 +382,18 @@
         <a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Importadora%20Mundilujos%20Calle%2016%2015-50%20Bogota" target="_blank" rel="noopener noreferrer">Cómo llegar <span aria-hidden="true">↗</span></a>
       </div>
     </section>
+    <section class="buy-process" aria-labelledby="titulo-proceso">
+      <div class="process-heading"><div><p class="eyebrow section-id"><b>04</b> / Tu compra, paso a paso</p><h2 id="titulo-proceso">Así compras en Mundilujos</h2></div><span class="process-badge">Pago anticipado<br>Sin contraentrega</span></div>
+      <p class="process-intro">Todo se coordina por WhatsApp. Primero confirmamos tu pedido; después realizas el pago.</p>
+      <ol class="process-steps">
+        <li><div class="step-top"><span class="step-number">01</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 3 11 9-6 1-3 6-2-16Z"/><path d="m13 14 4 6"/></svg></div><h3>Haz clic en comprar</h3><p>Elige la cantidad de bases que necesitas. Luego pulsa «Comprar al detal».</p></li>
+        <li><div class="step-top"><span class="step-number">02</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Llena el formulario</h3><p>Déjanos tu nombre, departamento y ciudad o municipio.</p></li>
+        <li><div class="step-top"><span class="step-number">03</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 1 0-4.2 7.3L21 20l-1.2-4.2a8.5 8.5 0 0 0 1.2-4.3Z"/><path d="m8 12 3 3 5-6"/></svg></div><h3>Confirma por WhatsApp</h3><p>Confirmamos la disponibilidad y el valor de tu pedido antes de que pagues.</p></li>
+        <li><div class="step-top"><span class="step-number">04</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18L12 3 3 9ZM5 12v6m7-6v6m7-6v6M3 21h18"/></svg></div><h3>Realiza el pago</h3><p>El asesor envía los datos por WhatsApp. Paga por QR de Bancolombia, transferencia o Bre-B y envía el comprobante.</p></li>
+        <li><div class="step-top"><span class="step-number">05</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6h12v11H2zm12 4h4l4 4v3h-8M5 3h6"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div><h3>Factura y despacho</h3><p>Verificamos el ingreso del pago, emitimos tu factura y gestionamos el despacho.</p></li>
+      </ol>
+      <p class="process-shipping"><strong>Producto y flete se pagan por separado.</strong> El producto se paga por anticipado y el flete al recibir. No manejamos contraentrega del producto.</p>
+    </section>
   </main>
   <section class="service-strip" aria-label="Servicios y atención">
     <ul class="wrap service-grid">
@@ -377,7 +419,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/>
         </svg>
-        <div><strong>Opciones de pago</strong><p>Pregunta por los medios de pago disponibles.</p></div>
+        <div><strong>Opciones de pago</strong><p>Pago anticipado por transferencia, Bre-B o QR. Sin contraentrega.</p></div>
       </li>
     </ul>
   </section>
@@ -398,7 +440,7 @@
     </div>
   </footer>
   <div class="sticky" id="barra-compra" hidden>
-    <div class="sticky-price"><span id="precio-fijo"></span> <small>Envío no incluido</small></div>
+    <div class="sticky-price"><span id="precio-fijo"></span> <small>Pago anticipado · Sin envío</small></div>
     <button type="button" class="button primary" data-buy>Comprar al detal <span class="arrow" aria-hidden="true">→</span></button>
   </div>
   <dialog id="pedido" aria-labelledby="pedido-titulo">
@@ -409,7 +451,9 @@
       <label>Nombre y apellido<input name="nombre" autocomplete="name" required pattern=".*\S.*" maxlength="100" autofocus></label>
       <label>Departamento<input name="departamento" autocomplete="address-level1" required pattern=".*\S.*" maxlength="100"></label>
       <label>Ciudad o municipio<input name="ciudad" autocomplete="address-level2" required pattern=".*\S.*" maxlength="100"></label>
-      <button class="button primary" type="submit">Continuar en WhatsApp <span class="arrow" aria-hidden="true">↗</span></button>
+      <p class="form-payment-note">El asesor te compartirá los datos para pagar por transferencia, Bre-B o QR por este mismo chat, después de confirmar tu pedido.</p>
+      <label class="payment-consent" for="acepta-pago"><input type="checkbox" id="acepta-pago" name="aceptaPago" required><span>Entiendo que el producto requiere pago anticipado y que no hay servicio contraentrega. El flete se paga al recibir.</span></label>
+      <button class="button primary" type="submit">Confirmar compra por WhatsApp <span class="arrow" aria-hidden="true">↗</span></button>
     </form>
   </dialog>
   <script>
@@ -605,6 +649,7 @@
     id('datos').addEventListener('submit', (evento) => {
       evento.preventDefault();
       if (!checkout || checkout.enviado) return;
+      if (!evento.currentTarget.reportValidity()) return;
       const datos = new FormData(evento.currentTarget);
       checkout.enviado = true;
       const mensaje = [
@@ -615,7 +660,11 @@
         'Subtotal sin envío: ' + pesos(producto.precio * checkout.unidades) + ' COP',
         'Nombre: ' + datos.get('nombre').trim(),
         'Departamento: ' + datos.get('departamento').trim(),
-        'Ciudad o municipio: ' + datos.get('ciudad').trim()
+        'Ciudad o municipio: ' + datos.get('ciudad').trim(),
+        'Entiendo que el pago del producto es anticipado y que no hay contraentrega.',
+        'Quiero confirmar disponibilidad y valor del pedido para pagar por transferencia, Bre-B o QR de Bancolombia.',
+        'Por favor, compártanme los datos de pago por este chat.',
+        'El flete se paga al recibir.'
       ].join('\n');
       registrarComercio('purchase', 'Purchase', checkout.unidades, checkout.id);
       window.open(whatsapp(producto.whatsappDetal, mensaje), '_blank', 'noopener,noreferrer');
