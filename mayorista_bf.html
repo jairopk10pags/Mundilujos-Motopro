@@ -55,8 +55,8 @@
 .bf-art:before{content:'';position:absolute;inset:20% 0 18%;z-index:-1;border:1px solid #ef26354d;transform:skewY(-6deg);background:linear-gradient(135deg,#e4081615,transparent);box-shadow:0 0 60px #e4081612}
 .bf-art-title{font-family:var(--display);font-size:clamp(2.6rem,5.2vw,4.6rem);font-weight:900;font-style:italic;letter-spacing:-.07em;line-height:.94;margin:0 0 14px;text-shadow:0 4px 0 #0008}
 .bf-art-title span{display:block}.bf-art-title span:first-child{color:#f4f5f7}.bf-art-title span:last-child{color:#ff2434}
-.bf-art-discount{display:block;font:900 italic clamp(6rem,12vw,10rem)/1 var(--display);letter-spacing:-.08em;text-shadow:0 8px 35px #e4081633}
-.bf-art-discount span{font-size:.6em;letter-spacing:-.06em}
+.bf-art-day{display:block;font:900 italic clamp(6rem,12vw,10rem)/1 var(--display);letter-spacing:-.08em;text-shadow:0 8px 35px #e4081633}
+.bf-art-day span{font-size:.6em;letter-spacing:-.06em}
 .bf-art-caption{display:inline-block;margin:9px 0 0;padding:7px 26px;background:var(--red);font-size:clamp(.85rem,1.5vw,1.1rem);font-weight:900;font-style:italic;letter-spacing:.1em;transform:skewY(-3deg)}
 .bf-copy{min-width:0}.bf-date{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:20px;padding:8px 12px;border:1px solid #fa485766;background:#e408161a;color:#fff;font-size:.75rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}.bf-date time{color:#ffbac0}
 .bf-copy h2{font-size:clamp(2rem,3.3vw,3rem);letter-spacing:-.045em;margin:0 0 18px;max-width:17ch}
@@ -64,8 +64,8 @@
 .bf-minimum{color:#fff;font-size:.94rem;margin-bottom:23px}.bf-minimum span{color:#c2c7d0}
 .bf-promo .bf-button{background:var(--red);color:#fff;border-color:#ff4a56;box-shadow:0 8px 30px #e4081626;padding:17px 23px;max-width:100%}.bf-promo .bf-button:hover{background:#bb0010}
 .bf-terms{color:#b6bbc4;font-size:.8rem;margin:13px 0 0}
-@media(max-width:900px){.bf-grid{gap:28px}.bf-art-title{font-size:clamp(2.4rem,5vw,3.7rem)}.bf-art-discount{font-size:clamp(6rem,12vw,8.5rem)}}
-@media(max-width:760px){.bf-grid{grid-template-columns:1fr;gap:20px;padding-block:28px 34px}.bf-art{padding:8px 12px 18px}.bf-art-title{font-size:clamp(2.1rem,9vw,3.3rem);line-height:1;display:flex;flex-wrap:wrap;justify-content:center;gap:0 .25em;margin-bottom:3px}.bf-art-discount{font-size:clamp(5.8rem,25vw,9rem)}.bf-art-caption{font-size:.78rem;margin-top:1px;padding:5px 20px}.bf-date{margin-bottom:15px;font-size:.68rem}.bf-copy h2{font-size:clamp(1.85rem,7vw,2.5rem);max-width:none;margin-bottom:14px}.bf-description{font-size:.94rem;max-width:none}.bf-minimum{font-size:.875rem;margin-bottom:20px}.bf-promo .bf-button{width:100%;font-size:.94rem;padding:16px 12px}.bf-terms{text-align:center}}
+@media(max-width:900px){.bf-grid{gap:28px}.bf-art-title{font-size:clamp(2.4rem,5vw,3.7rem)}.bf-art-day{font-size:clamp(6rem,12vw,8.5rem)}}
+@media(max-width:760px){.bf-grid{grid-template-columns:1fr;gap:20px;padding-block:28px 34px}.bf-art{padding:8px 12px 18px}.bf-art-title{font-size:clamp(2.1rem,9vw,3.3rem);line-height:1;display:flex;flex-wrap:wrap;justify-content:center;gap:0 .25em;margin-bottom:3px}.bf-art-day{font-size:clamp(5.8rem,25vw,9rem)}.bf-art-caption{font-size:.78rem;margin-top:1px;padding:5px 20px}.bf-date{margin-bottom:15px;font-size:.68rem}.bf-copy h2{font-size:clamp(1.85rem,7vw,2.5rem);max-width:none;margin-bottom:14px}.bf-description{font-size:.94rem;max-width:none}.bf-minimum{font-size:.875rem;margin-bottom:20px}.bf-promo .bf-button{width:100%;font-size:.94rem;padding:16px 12px}.bf-terms{text-align:center}}
 
 </style>
 </head>
@@ -83,15 +83,15 @@
   <div class="wrap bf-grid">
     <div class="bf-art" aria-hidden="true">
       <p class="bf-art-title"><span>BLACK</span><span>FRIDAY</span></p>
-      <span class="bf-art-discount">20<span>%</span></span>
-      <p class="bf-art-caption">DE DESCUENTO</p>
+      <span class="bf-art-day">27<span>NOV</span></span>
+      <p class="bf-art-caption">MUY PRONTO</p>
     </div>
     <div class="bf-copy">
       <p class="bf-date">BLACK FRIDAY MAYORISTA <span aria-hidden="true">·</span> <time datetime="2026-11-27">27 DE NOVIEMBRE</time></p>
-      <h2 id="titulo-black-friday">20% de descuento.</h2>
-      <p class="bf-description">Revisa nuestro catálogo desde hoy y <strong>prepara las referencias y cantidades que necesitas.</strong> El viernes 27 realiza tu pedido y aprovecha el descuento.</p>
+      <h2 id="titulo-black-friday">Algo grande viene en camino.</h2>
+      <p class="bf-description">Este viernes 27 de noviembre descubre lo que preparamos para tu negocio. Mientras tanto, <strong>consulta nuestro catálogo y cotiza las referencias que necesitas hoy.</strong></p>
       <p class="bf-minimum">Pedido mínimo mayorista: <strong>$250.000.</strong><br><span>Puedes mezclar referencias.</span></p>
-      <a id="btn-mayorista-black-friday" class="btn bf-button" data-wa="mayorista" data-position="black-friday" href="https://wa.me/573144566196?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20preparar%20mi%20pedido%20para%20el%20Black%20Friday%20del%2027%20de%20noviembre.%20%C2%BFMe%20comparten%20el%20cat%C3%A1logo%20mayorista%3F%20Quiero%20dejar%20listas%20mis%20referencias%20y%20cantidades." target="_blank" rel="noopener noreferrer"><svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.1 13.5c-.2.7-1.4 1.3-1.9 1.4-.5 0-1.2.2-3.4-.7-2.7-1.1-4.5-3.9-4.6-4.1-.2-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.3-.3.6-.3.8-.3h.5c.2 0 .4-.1.7.5l.8 2.1c.1.2.1.3 0 .5l-.7 1c-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4.1.1.1.7-.1 1.4Z"/></svg><span>Ver catálogo y preparar mi pedido</span></a>
+      <a id="btn-mayorista-black-friday" class="btn bf-button" data-wa="mayorista" data-position="black-friday" href="https://wa.me/573144566196?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20conocer%20el%20cat%C3%A1logo%20mayorista%20y%20cotizar%20un%20pedido.%20%C2%BFMe%20ayudan%20con%20precios%20y%20disponibilidad%3F" target="_blank" rel="noopener noreferrer"><svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.1 13.5c-.2.7-1.4 1.3-1.9 1.4-.5 0-1.2.2-3.4-.7-2.7-1.1-4.5-3.9-4.6-4.1-.2-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.3-.3.6-.3.8-.3h.5c.2 0 .4-.1.7.5l.8 2.1c.1.2.1.3 0 .5l-.7 1c-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4.1.1.1.7-.1 1.4Z"/></svg><span>Ver catálogo y cotizar mi pedido</span></a>
       <p class="bf-terms">Aplican términos y condiciones.</p>
     </div>
   </div>
